@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>NuevaPlantilla</title>         
+        @Styles.Render("~/CSS/bootstrap.min.css")
+    </head>
+    <body>
+        @if(IsSectionDefined("Menu")){
+            @RenderSection("Menu", false)
+        } else{
+            //DISEÑO DE LA PÁGINA MAESTRA
+            <nav>
+                <ul>
+                    <li>Enlace 1</li>
+                    <li>Enlace 2</li>
+                    <li>Enlace 3</li>
+                </ul>
+            </nav>
+        }
+
+        @RenderPage("Cabecera.cshtml")
+    @* LE DAMOS UN COLOR DE FONDO Y UN ALTO AL CONTENEDOR PARA VISUALIZARLO *@
+        <div style="background-color: chocolate; height: 300px">
+            @RenderSection("Opcional", false)
+        </div><br />
+        @Html.ActionLink("Mostrar vista opcional", "Opcional", "Secciones")
+        <div>
+            @RenderBody()
+        </div>
+        <footer><h4>ESTE ES MI FOOTER</h4></footer>
+        @Scripts.Render("~/JS/jquery-3.2.1.min.js")
+        @Scripts.Render("~JS/bootstrap.min.js")
+    </body>
+</html>

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Opcional";
+}
+
+<h2>Página hija 'Opcional'</h2>
+@section Menu{
+    <h2>Menú personalizado</h2>
+    <nav style="background-color:sandybrown">
+        <ul>
+            <li>Nuevo Enlace 1</li>
+            <li>Nuevo Enlace 2</li>
+        </ul>
+    </nav>
+}
+
+@section Opcional{
+    <img src='@Url.Content("~/IMG/cat.jpe")' style="height:300px; width:300px" title="Zona Opcional en Secciones" />
+}
+
